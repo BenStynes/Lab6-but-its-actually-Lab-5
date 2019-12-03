@@ -173,6 +173,7 @@ Matrix3 Matrix3::Inverse(Matrix3 M1)
 
 Matrix3 Matrix3::Rotation(int _angle)
 {
+	const float PI = 3.14159265359f;
 	float radians = PI / 180 * _angle;
 	Matrix3 answer = Matrix3();
 	answer.A11 = cos(radians);
@@ -236,6 +237,7 @@ Matrix3 Matrix3::operator -()
 
 Matrix3 Matrix3::RotationX(int _angle)
 {
+	const float PI = 3.14159265359f;
 	float radians = PI / 180 * _angle;
 	Matrix3 answer = Matrix3();
 	answer.A11 = 1;
@@ -252,6 +254,7 @@ Matrix3 Matrix3::RotationX(int _angle)
 }
 Matrix3 Matrix3::RotationY(int _angle)
 {
+	const float PI = 3.14159265359f;
 	float radians = PI / 180 * _angle;
 	Matrix3 answer = Matrix3();
 	answer.A11 = cos(radians);
@@ -266,8 +269,9 @@ Matrix3 Matrix3::RotationY(int _angle)
 
 	return answer;
 }
-Matrix3 Matrix3::RotationZ(int _angle)
+ Matrix3 Matrix3::RotationZ(int _angle)
 {
+	 const float PI = 3.14159265359f;
 	float radians = PI / 180 * _angle;
 	Matrix3 answer = Matrix3();
 	answer.A11 = cos(radians);

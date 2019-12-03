@@ -118,7 +118,7 @@ Quaternion Quaternion::operator*(int s)
 		return Quaternion();
 	}
 
-	vector3 Rotate(vector3 pt, int _angle)
+	vector3  Quaternion::Rotate(vector3 pt, int _angle)
 	{
 		Quaternion axis;
 		Quaternion rotate;

@@ -187,6 +187,23 @@ int main()
 
 	Matrix3 ans15 = tester1.Scale3D(4);
 	std::cout << ans15.toString() << std::endl;
+	
+	vector3 phillTest1(2.0f,-5.0f,-5.0f);
+
+	vector3 phillTest2(-2.0f,-2.0f,-5.0f);
+	vector3 phillTest3(2.0f,-2.0f,-5.0f);
+	Quaternion test4(0, 0, 0, 1);
+
+		vector3 result4phill = Matrix3::RotationZ(23.21f)  * phillTest3;
+		vector3 resulr4Phill2 = test4.Rotate(phillTest3, 5);
+		std::cout << "Phill test 1: " << result4phill.ToString() << std::endl;
+
+		std::cout << "Length of V1 : " << phillTest1.Length() << std::endl;
+
+		std::cout << "Lenth squared of V2: " << phillTest2.LengthSquared() << std::endl;
+
+		std::cout << "queterneans test :" << resulr4Phill2.ToString() << std::endl;
+
 	system("Pause");
 	return 1;
 	

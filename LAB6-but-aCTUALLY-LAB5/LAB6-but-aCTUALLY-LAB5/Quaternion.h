@@ -17,6 +17,8 @@ public:
 			 Quaternion(float _w, vector3 v);
 			
 			std::string ToString();
+
+			vector3 Rotate(vector3 pt, int _angle);
 			
 
 			 float  getModulus(); 
@@ -36,7 +38,7 @@ public:
 			//                  -1
 			// V'=q*V*q     ,
 
-			friend vector3 Rotate(vector3 pt, int _angle);
+			//friend vector3 Rotate(vector3 pt, int _angle);
 			
 
 			// Multiplying q1 with q2 is meaning of doing q2 firstly then q1

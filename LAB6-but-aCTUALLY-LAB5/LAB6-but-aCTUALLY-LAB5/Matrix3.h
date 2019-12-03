@@ -3,6 +3,7 @@
 #include"vector3.h"
 #include<cmath>
 
+
 class Matrix3
 {
 
@@ -18,7 +19,6 @@ public:
 			 float A31;
 			 float A32;
 			 float A33;
-			 const float PI = 3.14159265359f;
 
 			// Constructor 1 create a zero matrix
 			 Matrix3();
@@ -39,7 +39,7 @@ public:
 
 			 Matrix3 RotationY(int _angle);
 
-			 Matrix3 RotationZ(int _angle);
+			static Matrix3 RotationZ(int _angle);
 
 			 Matrix3 Scale3D(int dx);
 
