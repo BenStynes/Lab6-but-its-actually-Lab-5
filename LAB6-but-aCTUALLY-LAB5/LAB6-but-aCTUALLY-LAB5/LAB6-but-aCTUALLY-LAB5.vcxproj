@@ -130,6 +130,7 @@
     <ClCompile Include="vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="main.h" />
     <ClInclude Include="Matrix3.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Vector2f.h" />
