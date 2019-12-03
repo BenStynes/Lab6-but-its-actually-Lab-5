@@ -10,6 +10,20 @@ int main()
 	vector3 testVect3;
 	vector3 testVect31;
 	Matrix3 testMat3;
+	Matrix3 tester1(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0);
+	Matrix3 tester2(9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0);
+	Matrix3 tester3(4.0, 5.0, 4.0, 9.0, 8.0, 6.0, 2.0, 12.0, 1.0);
+	Matrix3 tester4(3.0, 1.0, 9.0, 6.0, 2.0, 7.0, 0.0, 4.0, 9.0);
+	Matrix3 tester5(69.0, 73.0, 10.0, 84.0, 60.0, 89.0, 82.0, 40.0, 17.0);
+	Matrix3 tester6(1.0, 2.0, 3.0, 0.0, 1.0, 4.0, 5.0, 6.0, 0.0);
+	vector3 row1(1.0, 2.0, 3.0);
+	vector3 row2(4.0, 5.0, 6.0);
+	vector3 row3(7.0, 8.0, 9.0);
+	vector3 secondRow1(9.0, 8.0, 7.0);
+	vector3 secondRow2(6.0, 5.0, 4.0);
+	vector3 secondRow3(3.0, 2.0, 1.0);
+	Matrix3 tester1ButWithMyVector3(row1, row2, row3);
+	Matrix3 tester2ButWithMyVector3(secondRow1, secondRow2, secondRow3);
 	Vector2f testvect2f;
 	Vector2f testvect2f1;
 	Quaternion testquat;
@@ -121,9 +135,59 @@ int main()
 	std::cout << erer.ToString() << std::endl;
 	std::cout << "Test for Matrix3" << std::endl;
 
+	vector3 ans1 = tester1 * row1;
+	std::cout << ans1.ToString() << std::endl;
+	
+	Matrix3 newtest = tester1.Transpose(tester2);
+	std::cout << newtest.toString() << std::endl;
 
+	Matrix3 newtest2 = tester1 + tester2;
+	std::cout << newtest2.toString() << std::endl;
 
+	Matrix3 newtest3 = tester1 - tester2;
+	std::cout << newtest3.toString() << std::endl;
+
+	Matrix3 ans2 = tester1 * tester2;
+	std::cout << ans2.toString() << std::endl;
+	 
+	Matrix3 ans3 = tester1 * 2;
+	std::cout << ans3.toString() << std::endl;
+
+	float ans4 = tester1.Determinant(tester1);
+	std::cout << ans4 << std::endl;
+
+	vector3 ans5 = tester1.Column(2);
+	std::cout << ans5.ToString() << std::endl;
+
+	vector3 ans6 = tester1.Row(2);
+	std::cout << ans6.ToString() << std::endl;
+
+	Matrix3 ans7 = tester1.Inverse(tester1);
+	std::cout << ans7.toString() << std::endl;
+
+	Matrix3 ans8 = tester1.Rotation(45);
+	std::cout << ans8.toString() << std::endl;
+
+	Matrix3 ans9 = tester1.Translate(7,7);
+
+	std::cout << ans9.toString() << std::endl;
+
+	Matrix3 ans10 = tester1.Scale(5,5);
+	std::cout << ans10.toString() << std::endl;
+
+	Matrix3 ans11 = -tester1;
+	std::cout << ans11.toString() << std::endl;
+
+	Matrix3 ans12 = tester1.RotationX(45);
+	std::cout << ans12.toString() << std::endl;
+	Matrix3 ans13 = tester1.RotationY(45);
+	std::cout << ans13.toString() << std::endl;
+	Matrix3 ans14 = tester1.RotationZ(45);
+	std::cout << ans14.toString() << std::endl;
+
+	Matrix3 ans15 = tester1.Scale3D(4);
+	std::cout << ans15.toString() << std::endl;
 	system("Pause");
 	return 1;
-
+	
 }

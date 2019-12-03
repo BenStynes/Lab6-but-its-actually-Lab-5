@@ -43,6 +43,8 @@ public:
 
 			 Matrix3 Scale3D(int dx);
 
+			 std::string toString() const;
+
 			 Matrix3 operator*(float x);
 
 			 Matrix3 operator*(Matrix3 M2);
