@@ -192,7 +192,7 @@ int main()
 
 	vector3 phillTest2(-2.0f,-2.0f,-5.0f);
 	vector3 phillTest3(2.0f,-2.0f,-5.0f);
-	Quaternion test4(0, 0, 0, 1);
+	Quaternion test4(0, 0, 0, 1.0f);
 
 		vector3 result4phill = Matrix3::RotationZ(23.21f)  * phillTest3;
 		vector3 resulr4Phill2 = test4.Rotate(phillTest3, 5);

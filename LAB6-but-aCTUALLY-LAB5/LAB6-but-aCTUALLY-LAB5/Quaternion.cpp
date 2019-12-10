@@ -2,7 +2,7 @@
 
 float Quaternion::getModulus()
 {
-	return  sqrt(w * w + x * x + y * y + z * z);
+	return  sqrtf(w * w + x * x + y * y + z * z);
 }
 
 Quaternion Quaternion::Normalise()
@@ -118,13 +118,13 @@ Quaternion Quaternion::operator*(int s)
 		return Quaternion();
 	}
 
-	vector3  Quaternion::Rotate(vector3 pt, int _angle)
+vector3  Quaternion::Rotate(vector3 pt, int _angle)
 	{
 		Quaternion axis;
 		Quaternion rotate;
 		axis =  Normalise() ;
 		float angleRad = PI / 180 * _angle;
-		rotate = Quaternion(cos(angleRad / 2), sin(angleRad / 2) * axis.x, sin(angleRad / 2) * axis.y, sin(angleRad / 2) * axis.z);
+		rotate = Quaternion(cos(angleRad / 2.0f), sin(angleRad / 2.0f) * axis.x, sin(angleRad / 2) * axis.y, sin(angleRad / 2) * axis.z);
 		Quaternion conjugate = rotate.Conjugate();
 		Quaternion qNode = Quaternion(0, pt.getX(), pt.getY(), pt.getZ());
 		qNode = rotate * qNode * conjugate;
@@ -152,5 +152,9 @@ Quaternion Quaternion::operator*(int s)
 
 	Quaternion operator*(Quaternion q1, Quaternion q2)
 	{
-		return Quaternion();
+		float nw = q1.w * q2.w - q1.x * q2.x - q1.y * q2.y - q1.z * q2.z;
+		float nx = q1.w * q2.x + q1.x * q2.w + q1.y * q2.z - q1.z * q2.y;
+		float ny = q1.w * q2.y + q1.y * q2.w + q1.z * q2.x - q1.x * q2.z;
+		float nz = q1.w * q2.z + q1.z * q2.w + q1.x * q2.y - q1.y * q2.x;
+		return Quaternion(nw, nx, ny, nz);
 	}
